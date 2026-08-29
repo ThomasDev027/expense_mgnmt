@@ -4,14 +4,18 @@ services:
     image: postgres:16-alpine
     container_name: expense-manager-db
     restart: unless-stopped
+
     environment:
       POSTGRES_DB: expense_manager
       POSTGRES_USER: expense_user
       POSTGRES_PASSWORD: expense_password
+
     ports:
       - "5432:5432"
+
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
     healthcheck:
       test:
         [
@@ -22,42 +26,51 @@ services:
       timeout: 5s
       retries: 5
 
+
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
+
     container_name: expense-manager-backend
     restart: unless-stopped
+
     ports:
       - "8000:8000"
+
+    env_file:
+      - ./backend/.env
+
     volumes:
       - ./backend:/app
+
     depends_on:
       postgres:
         condition: service_healthy
+
     command: >
-      uvicorn app.main:app
+      uvicorn main:app
       --host 0.0.0.0
       --port 8000
       --reload
 
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: expense-manager-pgadmin
+    restart: unless-stopped
+
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+
+    ports:
+      - "5050:80"
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+
 volumes:
   postgres_data:
-
-#   frontend:
-#     build:
-#       context: ./frontend
-#       dockerfile: Dockerfile
-#     container_name: expense-manager-frontend
-#     restart: unless-stopped
-#     ports:
-#       - "5173:5173"
-#     volumes:
-#       - ./frontend:/app
-#       - /app/node_modules
-#     depends_on:
-#       - backend
-#     command: npm run dev -- --host 0.0.0.0
-
-# volumes:
-#   postgres_data:

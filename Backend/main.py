@@ -1,21 +1,17 @@
 from fastapi import FastAPI
 
-app = FastAPI(
-    title="Expense Manager API",
-    version="1.0.0",
-)
+from routes.router import api_router
 
 
-@app.get("/")
-def root():
-    return {
-        "message": "Expense Manager API",
-        "status": "running",
-    }
+def create_app() -> FastAPI:
+    app = FastAPI(
+        title="Expense Manager API",
+        version="1.0.0",
+    )
+
+    app.include_router(api_router)
+
+    return app
 
 
-@app.get("/health")
-def health():
-    return {
-        "status": "healthy",
-    }
+app = create_app()
