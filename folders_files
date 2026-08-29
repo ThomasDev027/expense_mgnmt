@@ -1,0 +1,56 @@
+expense-manager/
+│
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   │
+│   │   ├── core/
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py
+│   │   │   ├── security.py
+│   │   │   ├── database.py
+│   │   │   └── exceptions.py
+│   │   │
+│   │   ├── common/
+│   │   │   ├── __init__.py
+│   │   │   ├── enums.py
+│   │   │   ├── pagination.py
+│   │   │   └── responses.py
+│   │   │
+│   │   └── modules/
+│   │       ├── auth/
+│   │       ├── users/
+│   │       ├── categories/
+│   │       ├── expenses/
+│   │       ├── income/
+│   │       ├── budgets/
+│   │       ├── accounts/
+│   │       ├── transactions/
+│   │       ├── reports/
+│   │       └── dashboard/
+│   │
+│   ├── tests/
+│   ├── alembic/
+│   │   ├── versions/
+│   │   ├── env.py
+│   │   └── script.py.mako
+│   │
+│   ├── requirements.txt
+│   ├── alembic.ini
+│   ├── .env
+│   ├── .env.example
+│   ├── .gitignore
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── Dockerfile
+│   └── .gitignore
+│
+├── docker-compose.yml
+├── .gitignore
+└── README.md
