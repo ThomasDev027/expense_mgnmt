@@ -7,8 +7,8 @@ from sqlalchemy.orm import Session
 from src.core.database import get_db
 from src.core.exceptions import UnauthorizedException
 from src.core.security import decode_access_token
-
 from src.models import User
+
 
 oauth2_scheme = OAuth2PasswordBearer(
     tokenUrl="/api/v1/auth/login",

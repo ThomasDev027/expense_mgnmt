@@ -6,8 +6,8 @@ from sqlalchemy import engine_from_config, pool
 from src.core.config import settings
 from src.core.database import Base
 
-# Import models so Alembic can detect them
-from modules.auth.models import User  # noqa: F401
+# Import all models so Alembic can detect them
+from src.models import User, Role  
 
 
 config = context.config

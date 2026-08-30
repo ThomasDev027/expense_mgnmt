@@ -1,95 +1,98 @@
 ExpeEnse Management
 
 Phase 1 — Foundation
-Authentication & Users
-Registration/login
-Password hashing
-JWT authentication
-User profile
-Roles/permissions
-Categories
-Food
-Travel
-Shopping
-Bills
-Entertainment
-Custom categories
-Expenses
-Create expense
-Edit expense
-Delete expense
-View expense
-Expense amount
-Date
-Category
-Description
-Payment method
-Receipt
-Income
-Add income
-Edit/delete income
-Income source
-Amount
-Date
-Description
+    Authentication & Users
+        Registration/login
+        Password hashing
+        JWT authentication
+        User profile
+        Roles/permissions
+    Categories
+        Food
+        Travel
+        Shopping
+        Bills
+        Entertainment
+        Custom categories
+    Expenses
+        Create expense
+        Edit expense
+        Delete expense
+        View expense
+        Expense amount
+        Date
+    Category
+        Description
+        Payment method
+        Receipt
+        Income
+        Add income
+        Edit/delete income
+        Income source
+        Amount
+        Date
+        Description
+
 Phase 2 — Financial management
-Budgets
-Monthly budget
-Category budgets
-Budget limits
-Budget utilization
-Over-budget warnings
-Transactions
-Income
-Expense
-Transfers
-Transaction history
-Accounts
-Cash
-Bank accounts
-Credit cards
-Wallets
-Recurring transactions
-Rent
-Salary
-Subscriptions
-EMIs
-Recurring bills
+    Budgets
+        Monthly budget
+        Category budgets
+        Budget limits
+        Budget utilization
+        Over-budget warnings
+    Transactions
+        Income
+        Expense
+        Transfers
+        Transaction history
+        Accounts
+        Cash
+        Bank accounts
+        Credit cards
+        Wallets
+        Recurring transactions
+        Rent
+        Salary
+        Subscriptions
+        EMIs
+        Recurring bills
+        
 Phase 3 — Reporting
-Dashboard
-Total income
-Total expenses
-Current balance
-Monthly spending
-Category breakdown
-Reports
-Daily expenses
-Weekly expenses
-Monthly expenses
-Yearly expenses
-Category reports
-Income vs expense
-Analytics
-Spending trends
-Top spending categories
-Budget utilization
-Month-over-month comparison
+    Dashboard
+        Total income
+        Total expenses
+        Current balance
+        Monthly spending
+        Category breakdown
+    Reports
+        Daily expenses
+        Weekly expenses
+        Monthly expenses
+        Yearly expenses
+        Category reports
+        Income vs expense
+    Analytics
+        Spending trends
+        Top spending categories
+        Budget utilization
+        Month-over-month comparison
+
 Phase 4 — Advanced
-Receipt management
-Upload receipt
-Store receipt
-Retrieve receipt
-Delete receipt
-Notifications
-Budget exceeded
-Recurring payment reminder
-Monthly summary
-Export
-CSV
-Excel
-PDF
-Admin
-User management
-Category management
-System configuration
-Audit logs
+    Receipt management
+        Upload receipt
+        Store receipt
+        Retrieve receipt
+        Delete receipt
+    Notifications
+        Budget exceeded
+        Recurring payment reminder
+        Monthly summary
+    Export
+        CSV
+        Excel
+        PDF
+    Admin
+        User management
+        Category management
+        System configuration
+        Audit logs

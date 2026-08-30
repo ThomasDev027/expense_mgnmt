@@ -1,8 +1,9 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from modules.auth.models import User
-from modules.auth.schemas import (
+from src.models import User, Role
+
+from src.schemas import (
     LoginRequest,
     RegisterRequest,
 )
@@ -40,12 +41,25 @@ class AuthService:
                 "Email is already registered"
             )
 
+        # Get default user role
+        role = db.scalar(
+            select(Role).where(
+                Role.name == "user"
+            )
+        )
+
+        if not role:
+            raise Exception(
+                "Default user role not found"
+            )
+
         user = User(
             email=email,
             password_hash=hash_password(
                 data.password
             ),
             full_name=data.full_name,
+            role_id=role.id,
         )
 
         db.add(user)
@@ -88,7 +102,7 @@ class AuthService:
 
         return create_access_token(
             user_id=user.id,
-            role=user.role.value,
+            role=user.role.name,
         )
 
 

@@ -4,7 +4,7 @@ from jose import JWTError
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from modules.auth.models import User
+from src.models import User
 
 from src.core.database import get_db
 from src.core.exceptions import UnauthorizedException

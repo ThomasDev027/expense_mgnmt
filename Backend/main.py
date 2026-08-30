@@ -11,6 +11,13 @@ def create_app() -> FastAPI:
 
     app.include_router(api_router)
 
+    @app.get("/")
+    def root():
+        return {
+            "message": "Expense Manager API is running",
+            "docs": "/docs",
+        }
+
     return app
 
 
